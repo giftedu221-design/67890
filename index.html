@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#087bb8" />
+  <title>부산 바다 안전센터</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <header class="topbar"><button id="homeButton" class="home-button" aria-label="홈으로 이동">🏠 <span>홈</span></button><p>BUSAN SEA SAFETY</p></header>
+
+  <main>
+    <section id="home" class="page active hero">
+      <div class="hero-slideshow" aria-hidden="true"><div class="hero-photo haeundae-photo"></div><div class="hero-photo gwangalli-photo"></div><div class="hero-photo dadaepo-photo"></div><div class="hero-photo songjeong-photo"></div></div>
+      <div class="hero-copy"><p class="eyebrow">오늘도 안전하게, 즐겁게</p><h1>부산 바다<br /><em>안전센터</em></h1><p class="intro">부산의 바다 상황을 확인하고, 게임으로 안전 수칙도 익혀보세요.</p></div>
+      <div class="hero-actions">
+        <button class="main-action game-action" data-go="games"><span>🎮</span><strong>미니게임</strong><small>재미있게 배우는 바다 안전</small></button>
+        <button class="main-action safety-action" data-go="safety"><span>🌊</span><strong>부산 바다 위험도</strong><small>오늘의 해수욕장 안전 정보</small></button>
+      </div>
+      <div class="wave wave-one"></div><div class="wave wave-two"></div>
+    </section>
+
+    <section id="safety" class="page content-page">
+      <div class="section-heading"><p class="eyebrow">REAL-TIME STYLE DASHBOARD</p><h2>오늘의 부산 바다 안전 정보</h2><p>2026년 8월 6일 · 아래 정보는 안전 교육용 예시 데이터입니다.</p></div>
+      <div class="beach-tabs" role="tablist" aria-label="해수욕장 선택"><button class="tab active" data-beach="해운대">해운대</button><button class="tab" data-beach="광안리">광안리</button><button class="tab" data-beach="송정">송정</button><button class="tab" data-beach="다대포">다대포</button></div>
+      <div class="status-banner"><span id="overallDot" class="status-dot caution"></span><div><b id="overallText">주의하며 물놀이 가능</b><p id="overallDesc">안전요원의 안내를 꼭 따라주세요.</p></div><span class="lifebuoy">🛟</span></div>
+      <div id="safetyCards" class="safety-grid"></div>
+    </section>
+
+    <section id="games" class="page content-page">
+      <div class="section-heading"><p class="eyebrow">PLAY & LEARN</p><h2>바다 안전 미니게임</h2><p>키보드 방향키 ↑ ↓ ← → 로 서퍼를 자유롭게 움직여 보세요.</p><p class="game-guide">해파리를 피해 쓰레기를 수거하자! · 쓰레기 수거 시 보너스 +5점</p></div>
+      <div id="gameChoice" class="game-choice">
+        <button class="game-select surf course-card" data-photo="assets/gwangalli.jpg" data-game="surf" data-course="gwangalli"><span class="game-mark surf-mark">01</span><span><b>광안리 서핑 코스</b><small>해파리 출몰: 안전 · 파도 높이: 0.4m<br />해파리가 적고 파도가 잔잔해요.</small></span><i>광안리에서 시작 →</i></button>
+        <button class="game-select surf course-card" data-photo="assets/songjeong.jpg" data-game="surf" data-course="songjeong"><span class="game-mark song-mark">02</span><span><b>송정 서핑 코스</b><small>해파리 출몰: 주의 · 파도 높이: 1.1m<br />해파리가 많고 파도 장애물이 나타나요.</small></span><i>송정에서 시작 →</i></button>
+        <button class="game-select surf course-card" data-photo="assets/dadaepo-sea.jpg" data-game="surf" data-course="dadaepo"><span class="game-mark dada-mark">03</span><span><b>다대포 서핑 코스</b><small>해파리 출몰: 안전 · 파도 높이: 1.8m<br />해파리는 적지만 높은 파도를 조심하세요.</small></span><i>다대포에서 시작 →</i></button>
+      </div>
+      <div id="gameStage" class="game-stage hidden">
+        <div class="game-head"><div id="gameTitle">게임</div><div class="scoreboard"><span id="scoreLabel">점수 <b id="score">0</b></span><span id="extraLabel">최고 <b id="best">0</b></span></div></div>
+        <div class="canvas-wrap"><canvas id="gameCanvas" width="720" height="480" aria-label="미니게임 화면"></canvas><div id="countdown" class="countdown hidden"></div><div id="gameOver" class="game-over hidden"><h3 id="gameOverTitle">게임 종료!</h3><p id="gameOverMessage"></p><button id="restartButton" class="primary-button">다시하기</button><button id="backToChoices" class="text-button">다른 게임 고르기</button></div></div>
+        <div class="touch-controls"><button data-move="up" aria-label="위로 이동">↑</button><button data-move="left" aria-label="왼쪽으로 이동">←</button><button data-move="down" aria-label="아래로 이동">↓</button><button data-move="right" aria-label="오른쪽으로 이동">→</button></div>
+      </div>
+    </section>
+  </main>
+  <footer>부산 바다 안전센터 · 안전한 물놀이 문화를 함께 만들어요 💙</footer>
+  <script src="games.js"></script><script src="script.js"></script>
+</body>
+</html>
